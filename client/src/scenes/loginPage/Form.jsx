@@ -74,7 +74,7 @@ const Form = () => {
       }
       formData.append("picturePath", values.picture.name);
 
-      const savedUserResponse = await fetch("http://localhost:3001/auth/register", {
+      const savedUserResponse = await fetch("https://post-rest-front.onrender.com/auth/register", {
         method: "POST",
         body: formData,
       });
@@ -99,7 +99,7 @@ const Form = () => {
     try {
       setLoading(true);
 
-      const loggedInResponse = await fetch("http://localhost:3001/auth/login", {
+      const loggedInResponse = await fetch("https://post-rest-front.onrender.com/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),

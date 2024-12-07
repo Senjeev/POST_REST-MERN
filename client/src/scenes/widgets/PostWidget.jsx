@@ -37,7 +37,7 @@ const PostWidget = ({
   const primary = palette.primary.main;
 
   const patchLike = async () => {
-    const response = await fetch(`http://localhost:3001/posts/${postId}/like`, {
+    const response = await fetch(`https://post-rest-front.onrender.com/posts/${postId}/like`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -52,7 +52,7 @@ const PostWidget = ({
     try {
       // Fetch the image as a blob
       const response = await fetch(
-        `http://localhost:3001/assets/${picturePath}`
+        `https://post-rest-front.onrender.com/assets/${picturePath}`
       );
       const blob = await response.blob();
       // Use file-saver's saveAs to trigger the download with the image's original name
@@ -79,7 +79,7 @@ const PostWidget = ({
           height="auto"
           alt="post"
           style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
-          src={`http://localhost:3001/assets/${picturePath}`}
+          src={`https://post-rest-front.onrender.com/assets/${picturePath}`}
         />
       )}
       <FlexBetween mt="0.25rem">
